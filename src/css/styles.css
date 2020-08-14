@@ -1,0 +1,5 @@
+.main-content {
+    background-image: url('/images/constitution.jpg');
+    background-size: cover;
+    min-height: 50vh;
+}

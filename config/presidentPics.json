@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "name": "Buchanon",
+        "imageName": "Buchanan.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Cleveland",
+        "imageName": "Cleveland.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Garfield",
+        "imageName": "Garfield.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Grant",
+        "imageName": "Grant.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Harrison",
+        "imageName": "Harrison.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Hayes",
+        "imageName": "Hayes.jpg"
+    },
+    {
+        "id":7,
+        "name": "Adams",
+        "imageName": "Adams.jpg"
+    },
+    {
+        "id": 8,
+        "name": "Madison",
+        "imageName": "Madison.jpg"
+    },
+    {
+        "id": 9,
+        "name": "McKinley",
+        "imageName": "Mckinley.jpg"
+    },
+    {
+        "id": 10,
+        "name": "Monroe",
+        "imageName": "Monroe.jpg"
+    },
+    {
+        "id": 11,
+        "name": "Polk",
+        "imageName": "Polk.jpg"
+    },
+    {
+        "id": 12,
+        "name": "Van Buren",
+        "imageName": "VanBuren.jpg"
+    }
+]
