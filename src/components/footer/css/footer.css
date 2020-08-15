@@ -1,0 +1,12 @@
+#footer {
+    padding: .25rem;
+    line-height: 1.15rem;
+    font-size: 80%;
+}
+
+@media (min-width: 768px) {
+    #footer {
+        padding: .50rem;
+        font-size: 90%;
+    }
+}

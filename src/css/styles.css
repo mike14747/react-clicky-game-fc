@@ -1,5 +1,16 @@
 .main-content {
-    background-image: url('/images/constitution.jpg');
-    background-size: cover;
-    min-height: 50vh;
+    margin-top: 150px;
+    margin-bottom: 100px;
+}
+
+@media (min-width: 768px) {
+    .main-content {
+        margin-top: 125px;
+    }
+}
+
+@media (min-width: 992px) {
+    .main-content {
+        margin-top: 100px;
+    }
 }
