@@ -1,0 +1,33 @@
+.img-div {
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.img-styles {
+    margin: 20px;
+    width: 170px;
+    height: auto;
+}
+
+.img-styles:hover {
+    margin: 10px;
+    width: 180px;
+    height: auto;
+    box-shadow: 5px 5px 10px #333333;
+}
+
+.my-col {
+    width: 50%;
+}
+
+@media (min-width: 768px) {
+    .my-col {
+        width: 33.33%;
+    }
+}
+  
+@media (min-width: 992px) {
+    .my-col {
+      width: 25%;
+    }
+}
