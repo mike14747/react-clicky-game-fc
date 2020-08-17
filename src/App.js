@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './css/my_style.css';
-import './css/styles.css';
+import './css/appStyles.css';
 import Header from './components/header/header';
 import Footer from './components/footer/footer';
+import Message from './components/message/message';
 import presidentPics from './config/presidentPics.json';
 import Pic from './components/pic/pic';
 import ScoreContext from './context/scoreContext';
@@ -12,6 +13,8 @@ function App() {
     const [topScore, setTopScore] = useState(0);
 
     const [score, setScore] = useState(0);
+
+    const [message, setMessage] = useState({ text: 'Click a president to start the game.', colorType: 'dark' });
 
     const [presidentsArray, setPresidentsArray] = useState(presidentPics);
 
@@ -34,8 +37,9 @@ function App() {
                     <Header />
                 </ScoreContext.Provider>
             </TopScoreContext.Provider>
+            <Message message={message} />
             <div className="pic-container mx-auto">
-                <div className="d-flex flex-wrap justify-content-center mx-auto picContainer">
+                <div className="d-flex flex-wrap justify-content-center mx-auto mt-3 picContainer">
                     {shuffleArray(presidentsArray).map(pic => (
                         <Pic key={pic.id} id={pic.id} image={pic.imageName} alt={pic.name} picClicked={picClicked} />
                     ))}

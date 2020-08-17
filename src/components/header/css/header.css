@@ -8,7 +8,7 @@
 
 .header-name {
     text-align: left;
-    font-size: 1.1rem;
+    font-size: 1rem;
     padding: 0.15rem;
     font-weight: bolder;
 }
@@ -17,6 +17,18 @@
     text-align: center;
     font-size: 80%;
     padding: 0.15rem;
+}
+
+@media (min-width: 576px) {
+    .header-name {
+        text-align: left;
+        font-size: 1.1rem;
+        padding: 0.25rem;
+    }
+    .instructions {
+        font-size: 90%;
+        padding: 0.25rem;
+    }
 }
 
 @media (min-width: 768px) {

@@ -4,20 +4,33 @@
 }
 
 .img-styles {
-    margin: 20px;
-    width: 170px;
+    margin: 10px;
+    width: 140px;
     height: auto;
 }
 
 .img-styles:hover {
-    margin: 10px;
-    width: 180px;
+    margin: 5px;
+    width: 150px;
     height: auto;
-    box-shadow: 5px 5px 10px #333333;
+    box-shadow: 3px 3px 6px #333333;
 }
 
 .my-col {
     width: 50%;
+}
+
+@media (min-width: 576px) {
+    .img-styles {
+        margin: 20px;
+        width: 170px;
+    }
+    
+    .img-styles:hover {
+        margin: 10px;
+        width: 180px;
+        box-shadow: 5px 5px 10px #333333;
+    }
 }
 
 @media (min-width: 768px) {

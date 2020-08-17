@@ -20,7 +20,7 @@ const Header = () => {
                 </div>
                 <div className="row">
                     <div className="col-12">
-                        <div className="instructions">Click on each 19th century president sequentially, without clicking on any of them twice, to win the game!</div>
+                        <div className="instructions">Click each president sequentially (without clicking any twice) to win the game!</div>
                     </div>
                 </div>
             </div>
