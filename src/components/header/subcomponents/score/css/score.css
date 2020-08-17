@@ -1,12 +1,11 @@
 .score {
-    text-align: center;
+    text-align: right;
     font-size: 1rem;
     padding: 0.15rem;
 }
 
 @media (min-width: 576px) {
     .score {
-        text-align: right;
         font-size: 1.15rem;
         padding: 0.20rem;
     }
@@ -14,7 +13,6 @@
 
 @media (min-width: 768px) {
     .score {
-        text-align: right;
         font-size: 1.25rem;
         padding: 0.25rem;
     }
@@ -22,7 +20,6 @@
 
 @media (min-width: 992px) {
     .score {
-        text-align: right;
         font-size: 1.5rem;
         padding: 0.5rem;
     }

@@ -1,26 +1,26 @@
-.top-score {
-    text-align: right;
+.message {
     font-size: .9rem;
-    padding: 0.15rem;
+    line-height: 1.25;
+}
+
+.message-div {
+    background-color: rgba(255, 255, 255, 0.75);
 }
 
 @media (min-width: 576px) {
-    .top-score {
+    .message {
         font-size: 1.0rem;
-        padding: 0.20rem;
     }
 }
 
 @media (min-width: 768px) {
-    .top-score {
+    .message {
         font-size: 1.10rem;
-        padding: 0.25rem;
     }
 }
 
 @media (min-width: 992px) {
-    .top-score {
+    .message {
         font-size: 1.25rem;
-        padding: 0.5rem;
     }
 }
