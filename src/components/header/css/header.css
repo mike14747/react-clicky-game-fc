@@ -19,18 +19,7 @@
     padding: 0.15rem;
 }
 
-.scores {
-    text-align: center;
-    font-size: 1.10rem;
-    padding: 0.15rem;
-}
-
 @media (min-width: 768px) {
-    .scores {
-        text-align: right;
-        font-size: 1.25rem;
-        padding: 0.25rem;
-    }
     .header-name {
         text-align: left;
         font-size: 1.25rem;
@@ -43,11 +32,6 @@
 }
 
 @media (min-width: 992px) {
-    .scores {
-        text-align: right;
-        font-size: 1.5rem;
-        padding: 0.5rem;
-    }
     .header-name {
         text-align: left;
         font-size: 1.5rem;

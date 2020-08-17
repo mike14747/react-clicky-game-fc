@@ -1,8 +1,9 @@
 import React from 'react';
 import './css/header.css';
-import PropTypes from 'prop-types';
+import Score from './subcomponents/score/score';
+import TopScore from './subcomponents/topScore/topScore';
 
-const Header = ({ topScore, score }) => {
+const Header = () => {
     return (
         <div className="row fixed-top header">
             <div className="col-12">
@@ -11,10 +12,10 @@ const Header = ({ topScore, score }) => {
                         <div className="header-name">19th Century Presidents</div>
                     </div>
                     <div className="col-auto">
-                        <div className="scores">Top Score: {topScore}</div>
+                        <TopScore />
                     </div>
                     <div className="col-auto">
-                        <div className="scores">Score: {score}</div>
+                        <Score />
                     </div>
                 </div>
                 <div className="row">
@@ -25,11 +26,6 @@ const Header = ({ topScore, score }) => {
             </div>
         </div >
     );
-};
-
-Header.propTypes = {
-    topScore: PropTypes.number,
-    score: PropTypes.number,
 };
 
 export default Header;
