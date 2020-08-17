@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './css/my_style.css';
 import './css/appStyles.css';
 import Header from './components/header/header';
@@ -10,7 +10,6 @@ import TopScoreContext from './context/topScoreContext';
 import MessageContext from './context/messageContext';
 
 function App() {
-    console.log('App is rendered!');
     const [topScore, setTopScore] = useState(0);
 
     const [score, setScore] = useState(0);
@@ -47,7 +46,6 @@ function App() {
 
         if (score === 11) {
             setMessage({ text: 'You\'ve Won the Game!', subText: '...click any president to start a new game...', colorType: 'success' });
-            newGame();
         } else if (score === 0) {
             setMessage({ text: 'The game has begun!', subText, colorType: 'primary' });
         } else {
@@ -58,7 +56,7 @@ function App() {
     };
 
     const picClicked = id => {
-        console.log('President with id ' + id + ' was clicked.');
+        if (score === 12) newGame();
         const justClicked = presidentsArray.filter(president => president.id === id);
         if (justClicked[0].clicked) {
             badClick();
