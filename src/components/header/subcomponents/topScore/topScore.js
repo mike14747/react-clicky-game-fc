@@ -7,7 +7,7 @@ const Score = () => {
 
     return (
         <div className="top-score">
-            Top Score: <span className="border bg-white text-primary px-2">{topScore}</span>
+            Top Score: <span className="border border-info bg-white text-info px-2">{topScore}</span>
         </div>
     );
 };

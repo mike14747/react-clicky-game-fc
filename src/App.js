@@ -8,16 +8,19 @@ import Pic from './components/pic/pic';
 import ScoreContext from './context/scoreContext';
 import TopScoreContext from './context/topScoreContext';
 import MessageContext from './context/messageContext';
+import ScoreColorTypeContext from './context/scoreColorTypeContext';
 
 function App() {
     const [topScore, setTopScore] = useState(0);
     const [score, setScore] = useState(0);
+    const [scoreColorType, setScoreColorType] = useState('initial');
     const [message, setMessage] = useState({ text: 'Click a president to start the game.', subText: null, colorType: 'dark' });
     const [presidentsArray, setPresidentsArray] = useState(presidentPics);
     const [gameOver, setGameOver] = useState(false);
 
     const badClick = () => {
-        setMessage({ text: 'Incorrect Guess', subText: '...click any president to start a new game...', colorType: 'danger' });
+        setScoreColorType('lost');
+        setMessage({ text: 'Incorrect Guess', subText: 'click any president to start a new game', colorType: 'danger' });
         setGameOver(true);
     };
 
@@ -27,8 +30,11 @@ function App() {
         newPresidentsArray[index].clicked = true;
         setPresidentsArray(newPresidentsArray);
 
+        setScoreColorType('begun');
+
         if (score === 11) {
-            setMessage({ text: 'You\'ve Won the Game!', subText: '...click any president to start a new game...', colorType: 'success' });
+            setScoreColorType('won');
+            setMessage({ text: 'You\'ve Won the Game!', subText: 'click any president to start a new game', colorType: 'success' });
             setScore(score + 1);
         } else if (score === 0 || gameOver) {
             setScore(1);
@@ -83,7 +89,9 @@ function App() {
             <MessageContext.Provider value={message}>
                 <TopScoreContext.Provider value={topScore}>
                     <ScoreContext.Provider value={score}>
-                        <Header />
+                        <ScoreColorTypeContext.Provider value={scoreColorType}>
+                            <Header />
+                        </ScoreColorTypeContext.Provider>
                     </ScoreContext.Provider>
                 </TopScoreContext.Provider>
             </MessageContext.Provider>

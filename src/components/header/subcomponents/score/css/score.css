@@ -4,6 +4,33 @@
     padding: 0.15rem;
 }
 
+.score-span {
+    padding: 0 .50rem;
+    background-color: #ffffff;
+}
+
+.score-initial {
+    color: #cccccc;
+    border: 1px #cccccc solid;
+}
+
+.score-begun {
+    color: #007bff;
+    border: 1px #007bff solid;
+}
+
+.score-lost {
+    color: #dc3545;
+    border: 1px #dc3545 solid;
+    font-weight: bolder;
+}
+
+.score-won {
+    color: #28a745;
+    border: 1px #28a745 solid;
+    font-weight: bolder;
+}
+
 @media (min-width: 576px) {
     .score {
         font-size: 1.15rem;
