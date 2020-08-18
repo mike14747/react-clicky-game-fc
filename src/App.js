@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './css/my_style.css';
 import './css/appStyles.css';
 import Header from './components/header/header';
@@ -11,25 +11,14 @@ import MessageContext from './context/messageContext';
 
 function App() {
     const [topScore, setTopScore] = useState(0);
-
     const [score, setScore] = useState(0);
-
     const [message, setMessage] = useState({ text: 'Click a president to start the game.', subText: null, colorType: 'dark' });
-
     const [presidentsArray, setPresidentsArray] = useState(presidentPics);
-
-    const newGame = () => {
-        setScore(0);
-        const resetClickedStatus = presidentsArray.map(president => {
-            president.clicked = false;
-            return president;
-        });
-        setPresidentsArray(resetClickedStatus);
-    };
+    const [gameOver, setGameOver] = useState(false);
 
     const badClick = () => {
         setMessage({ text: 'Incorrect Guess', subText: '...click any president to start a new game...', colorType: 'danger' });
-        newGame();
+        setGameOver(true);
     };
 
     const goodClick = id => {
@@ -38,25 +27,22 @@ function App() {
         newPresidentsArray[index].clicked = true;
         setPresidentsArray(newPresidentsArray);
 
-        let subText = null;
-        if (score > topScore) {
-            subText = 'New Top Score!';
-            setTopScore(topScore + 1);
-        }
-
         if (score === 11) {
             setMessage({ text: 'You\'ve Won the Game!', subText: '...click any president to start a new game...', colorType: 'success' });
-        } else if (score === 0) {
-            setMessage({ text: 'The game has begun!', subText, colorType: 'primary' });
+            setScore(score + 1);
+        } else if (score === 0 || gameOver) {
+            setScore(1);
+            setMessage({ text: 'The game has begun!', subText: null, colorType: 'primary' });
         } else {
-            setMessage({ text: 'Correct Guess!', subText, colorType: 'success' });
+            setMessage({ text: 'Correct Guess!', subText: null, colorType: 'success' });
+            setScore(score + 1);
         }
-
-        setScore(score + 1);
     };
 
     const picClicked = id => {
-        if (score === 12) newGame();
+        if (gameOver) {
+            setGameOver(false);
+        }
         const justClicked = presidentsArray.filter(president => president.id === id);
         if (justClicked[0].clicked) {
             badClick();
@@ -72,6 +58,25 @@ function App() {
         }
         return array;
     };
+
+    useEffect(() => {
+        if (score > topScore) {
+            setTopScore(topScore + 1);
+        }
+        if (score === 12) {
+            setGameOver(true);
+        }
+    }, [score]);
+
+    useEffect(() => {
+        if (gameOver) {
+            const updatedClickedStatus = presidentsArray.map(president => {
+                president.clicked = false;
+                return president;
+            });
+            setPresidentsArray(updatedClickedStatus);
+        }
+    }, [gameOver]);
 
     return (
         <div className="container">

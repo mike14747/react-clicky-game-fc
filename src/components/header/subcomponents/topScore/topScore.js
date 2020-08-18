@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import TopScoreContext from '../../../../context/scoreContext';
+import TopScoreContext from '../../../../context/topScoreContext';
 import './css/topScore.css';
 
 const Score = () => {
