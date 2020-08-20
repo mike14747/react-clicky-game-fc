@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Fragment } from 'react';
 import './css/my_style.css';
 import './css/appStyles.css';
 import Header from './components/header/header';
@@ -9,12 +9,13 @@ import ScoreContext from './context/scoreContext';
 import TopScoreContext from './context/topScoreContext';
 import MessageContext from './context/messageContext';
 import ScoreColorTypeContext from './context/scoreColorTypeContext';
+import Instructions from './components/instructions/instructions';
 
 function App() {
     const [topScore, setTopScore] = useState(0);
     const [score, setScore] = useState(0);
     const [scoreColorType, setScoreColorType] = useState('initial');
-    const [message, setMessage] = useState({ text: 'Click a president to start the game.', subText: null, colorType: 'dark' });
+    const [message, setMessage] = useState({ text: 'Click a president to begin.', subText: null, colorType: 'dark' });
     const [presidentsArray, setPresidentsArray] = useState(presidentPics);
     const [gameOver, setGameOver] = useState(false);
 
@@ -85,7 +86,7 @@ function App() {
     }, [gameOver]);
 
     return (
-        <div className="container">
+        <Fragment>
             <MessageContext.Provider value={message}>
                 <TopScoreContext.Provider value={topScore}>
                     <ScoreContext.Provider value={score}>
@@ -95,13 +96,16 @@ function App() {
                     </ScoreContext.Provider>
                 </TopScoreContext.Provider>
             </MessageContext.Provider>
-            <div className="d-flex flex-wrap justify-content-center pic-container mx-auto">
-                {shuffleArray(presidentsArray).map(pic => (
-                    <Pic key={pic.id} id={pic.id} image={pic.imageName} alt={pic.name} picClicked={picClicked} />
-                ))}
+            <div className="container flex-fill">
+                <Instructions />
+                <div className="d-flex flex-wrap justify-content-center pic-container mx-auto mb-4">
+                    {shuffleArray(presidentsArray).map(pic => (
+                        <Pic key={pic.id} id={pic.id} image={pic.imageName} alt={pic.name} picClicked={picClicked} />
+                    ))}
+                </div>
             </div>
             <Footer />
-        </div>
+        </Fragment>
     );
 }
 

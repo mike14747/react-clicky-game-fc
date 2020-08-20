@@ -15,14 +15,9 @@ const Header = () => {
                     <div className="col-4 mt-2">
                         <Message />
                     </div>
-                    <div className="col-4 mt-2 text-right">
+                    <div className="col-4 mt-2 pb-2 text-right">
                         <TopScore />
                         <Score />
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col-12">
-                        <div className="instructions">Click each president sequentially (without clicking any twice) to win the game!</div>
                     </div>
                 </div>
             </div>
