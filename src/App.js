@@ -73,6 +73,7 @@ function App() {
         if (score === 12) {
             setGameOver(true);
         }
+        // there will be a missing dependency warning here, but this is the way it has to be
     }, [score]);
 
     useEffect(() => {
@@ -83,6 +84,7 @@ function App() {
             });
             setPresidentsArray(updatedClickedStatus);
         }
+        // there will be a missing dependency warning here, but this is the way it has to be
     }, [gameOver]);
 
     return (

@@ -1,68 +1,66 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 19th Century Presidents Clicky Game
 
-## Available Scripts
+## What the project does:
 
-In the project directory, you can run:
+-   This project uses React JS framework to create a clicky game with a 19th century presidents theme.
+-   It's a functional component version of my prior clicky game... which was class-based.
 
-### `yarn start`
+---
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## How users can get started with the project:
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+-   Clone the GitHub repo and deploy 'as is' wherever you'd like.
 
-### `yarn test`
+---
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## About the code in this project:
 
-### `yarn build`
+This project uses 4 components which are utilized in **src/App.js** (which is the only file using **State**), then are rendered through **src/index.js** to the root id element in **public/index.html**... the main (and only) page. The default State of App.js is as follows:
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```js
+const [topScore, setTopScore] = useState(0);
+const [score, setScore] = useState(0);
+const [scoreColorType, setScoreColorType] = useState('initial');
+const [message, setMessage] = useState({ text: 'Click a president to begin.', subText: null, colorType: 'dark' });
+const [presidentsArray, setPresidentsArray] = useState(presidentPics);
+const [gameOver, setGameOver] = useState(false);
+```
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+The 4 components are:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+-   header.js
+-   instructions.js
+-   pic.js
+-   footer.js
 
-### `yarn eject`
+Each of the components reside in the **src/components** folder. Two of the components (header and pic) have their own subfolders within the components folder because they also have associated css files and/or images they need to be grouped with.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+The president pics are stored in the **public/images/presidents**, imported into App.js with their references in **config/presidentPics.json**.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+I used an ES6 version of the classic Fisher-Yates shuffle to randomly display the president pics upon each click or page load.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```js
+shuffleArray = array => {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+};
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+At the end of every game... whether that be because of an incorrect click or 12 consecutive successful clicks... the **resetGame()** function is called. That function resets the State of score and the pics array, but not topScore or message.
 
-## Learn More
+**Props** are passed from App.js to the pic component.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Context is used to pass the _Score_ and _Top Score_ values to their respective components (both of which are subcomponents of the _header_).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## This project was created and is maintained by:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+-   Mike Gullo
+-   Live version: https://react-clicky-game-fc.mikegullo.com/
+-   This project's github repo: https://github.com/mike14747/react-clicky-game-fc
+-   Me on github: https://github.com/mike14747
+-   Contact me at: mike14747@oh.rr.com for more info about this project.
