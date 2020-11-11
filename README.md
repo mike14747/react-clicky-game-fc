@@ -51,8 +51,6 @@ shuffleArray = array => {
 
 The **goodClick** and **badClick** handle when the game ends and if it was won or lost, while the **picClicked** function determines which of the prior functions will be called.
 
-At the end of every game... whether that be because of an incorrect click or 12 consecutive successful clicks... the **resetGame()** function is called. That function resets the State of score and the pics array, but not topScore or message.
-
 **Props** are passed from App.js to the pic component.
 
 Context is used to pass the _Score_ and _Top Score_ values to their respective components (both of which are subcomponents of the _header_).
