@@ -49,7 +49,7 @@ shuffleArray = array => {
 };
 ```
 
-The **goodClick** and **badClick** handle when the game ends and if it was won or lost, while the **picClicked** function determines which of the prior functions will be called.
+The **goodClick** and **badClick** functions handle when the game ends and if it was won or lost, while the **picClicked** function determines which of the prior functions will be called.
 
 **Props** are passed from App.js to the pic component.
 
