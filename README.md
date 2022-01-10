@@ -63,4 +63,6 @@ Context is used to pass the _Score_ and _Top Score_ values to their respective c
 -   Live version: https://react-clicky-game-fc.mikegullo.com/
 -   This project's github repo: https://github.com/mike14747/react-clicky-game-fc
 -   Me on github: https://github.com/mike14747
--   Contact me at: mike14747@oh.rr.com for more info about this project.
+-   Contact me at: [email]
+
+[email]: mgullo.dev@gmail.com
