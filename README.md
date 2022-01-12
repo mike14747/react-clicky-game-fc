@@ -1,5 +1,15 @@
 # 19th Century Presidents Clicky Game
 
+![React Clicky Game](https://img.shields.io/badge/React%20Clicky%20Game-228b22.svg?style=flat-square "React Clicky Game")
+![by: Mike Gullo](https://img.shields.io/badge/by:-Mike%20Gullo-232323.svg?style=flat-square&labelColor=dc143c "by: Mike Gullo")
+
+![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB "React")
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=000000 "JavaScript")
+![ESLint](https://img.shields.io/badge/ESLint-4B32C3?style=flat-square&logo=netlify&logoColor=white "ESLint")
+![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=flat-square&logo=netlify&logoColor=white "Netlify")
+
+---
+
 ## What the project does:
 
 -   This project uses React JS framework to create a clicky game with a 19th century presidents theme.
@@ -33,7 +43,7 @@ The 4 components are:
 -   pic.js
 -   footer.js
 
-Each of the components reside in the **src/components** folder. Two of the components (header and pic) have their own subfolders within the components folder because they also have associated css files and/or images they need to be grouped with.
+Each of the components reside in the **src/components** folder. Two of the components (header and pic) have their own sub-folders within the components folder because they also have associated css files and/or images they need to be grouped with.
 
 The president pics are stored in the **public/images/presidents**, imported into App.js with their references in **config/presidentPics.json**.
 
@@ -53,7 +63,7 @@ The **goodClick** and **badClick** functions handle when the game ends and if it
 
 **Props** are passed from App.js to the pic component.
 
-Context is used to pass the _Score_ and _Top Score_ values to their respective components (both of which are subcomponents of the _header_).
+Context is used to pass the _Score_ and _Top Score_ values to their respective components (both of which are sub-components of the _header_).
 
 ---
 
@@ -63,4 +73,4 @@ Context is used to pass the _Score_ and _Top Score_ values to their respective c
 -   Live version: https://react-clicky-game-fc.mikegullo.com/
 -   This project's github repo: https://github.com/mike14747/react-clicky-game-fc
 -   Me on github: https://github.com/mike14747
--   Contact me at: mike14747@oh.rr.com for more info about this project.
+-   Contact me at: mgullo.dev@gmail.com
